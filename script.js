@@ -279,6 +279,30 @@ function backToTop() {
   }
 };
 
+// Target filter button background color highlight.
+
+const colorFlipperBtns = document.querySelectorAll(".btn-1");
+
+const newArrivalsSection = document.querySelector(".new-arrivals");
+
+newArrivalsSection.addEventListener("click", function(e){
+
+  const id = e.target.dataset.id;
+
+  if(id){
+
+    colorFlipperBtns.forEach(function(btn){
+
+      btn.classList.remove("active")
+
+      e.target.classList.add("active")
+
+    });
+
+  };
+
+});
+
 window.addEventListener("scroll", backToTop);
 
 // New arrivals filter section
