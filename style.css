@@ -429,7 +429,7 @@ body {
   row-gap: 3rem;
 }
 .new-products-description:hover {
-  transform: scale(1.4);
+  transform: scale(1.1);
 }
 .btn-1 {
   color: black;
