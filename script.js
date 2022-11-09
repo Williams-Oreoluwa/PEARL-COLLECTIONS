@@ -5,22 +5,27 @@ const shoppingCartIcon = document.querySelector(".shopping-cart");
 const optimumCartItemDisplay = document.querySelector(".cart-display");
 
 shoppingCartIcon.addEventListener("click", function () {
+
   optimumCartItemDisplay.style.display = "block";
+
 });
 
-//Cart container removel
+//Cart container removal
 
 const cancelBtn = document.querySelector(".cancel-button");
 
 const newcartDisplay = cancelBtn.parentElement;
 
 cancelBtn.addEventListener("click", function () {
+
   newcartDisplay.style.display = "none";
+
 });
 
 //Cart total update
 
 function updateCartTotal() {
+
   const cartList = document.querySelector(".all-out-cart-display");
 
   const cartDetails = cartList.querySelectorAll(".cart-details");
@@ -30,11 +35,13 @@ function updateCartTotal() {
   //Looping through cart details variable
 
   for (i = 0; i < cartDetails.length; i++) {
+
     const cartDetail = cartDetails[i];
 
     const priceElement = cartDetail.querySelector(".cart-product-price");
 
     const quantityElement = cartDetail.querySelector(".cart-quantity-display");
+
     console.log(quantityElement);
 
     let price = priceElement.innerHTML.replace("$", "");
@@ -54,12 +61,15 @@ function updateCartTotal() {
 //Cart notification update
 
 function showTotal() {
+
   const total = [];
 
   const items = document.querySelectorAll(".cart-details");
 
   items.forEach(function (item) {
+
     total.push(item);
+
   });
 
   const itemNotificationCounter = document.getElementById("item-accumulation");
@@ -72,6 +82,7 @@ function showTotal() {
 const removeBtn = document.querySelectorAll(".remove-btn");
 
 removeBtn.forEach(function (clickedRemovedBtn) {
+
   clickedRemovedBtn.addEventListener("click", removeCartItem);
 });
 
@@ -80,6 +91,7 @@ removeBtn.forEach(function (clickedRemovedBtn) {
 const quantityInputs = document.querySelectorAll(".cart-quantity-display");
 
 for (i = 0; i < quantityInputs.length; i++) {
+
   const input = quantityInputs[i];
 
   input.addEventListener("change", quantityChanged);
@@ -90,6 +102,7 @@ for (i = 0; i < quantityInputs.length; i++) {
 const addTocartButtons = document.querySelectorAll(".cart-icon");
 
 for (i = 0; i < addTocartButtons.length; i++) {
+
   const addToCartButton = addTocartButtons[i];
 
   addToCartButton.addEventListener("click", addToCartClicked);
@@ -102,11 +115,13 @@ purchaseBtn.addEventListener("click", purchaseClicked);
 //Function for purchase button.
 
 function purchaseClicked() {
+
   alert("Thank you for purchase");
 
   const cartDetails = document.querySelector(".all-out-cart-display");
 
   while (cartDetails.hasChildNodes()) {
+
     cartDetails.removeChild(cartDetails.firstChild);
   }
 
@@ -130,10 +145,13 @@ function removeCartItem(e) {
 // Ensure negative or zero values return to one
 
 function quantityChanged(e) {
+
   const input = e.target;
 
   if (isNaN(input.value) || input.value <= 0) {
+
     input.value = 1;
+
   }
 
   updateCartTotal();
@@ -221,15 +239,6 @@ function addItemToCart(title, productPrice, productImage) {
   showTotal();
 }
 
-// Search Icon toggle.
-
-let search = document.querySelector(".search-box");
-
-const searchIcon = document.querySelector("#search-icon");
-
-searchIcon.addEventListener("click", function () {
-  search.classList.toggle("active");
-});
 
 //Menu Icon toggle for smaller screen sizes.
 let navbar = document.querySelector(".navbar");
@@ -237,8 +246,47 @@ let navbar = document.querySelector(".navbar");
 const menuIcon = document.querySelector("#menu-icon");
 
 menuIcon.addEventListener("click", function () {
+
   navbar.classList.toggle("active");
 });
+
+// Search filter bar
+
+const searchBar = document.querySelector(".search-bar");
+
+searchBar.addEventListener("input", searchFilter)
+
+function searchFilter(){
+
+  const searchBarInput = document.querySelector(".search-bar");
+
+  const itemFilter = searchBarInput.value.toLowerCase();
+
+  const productItems = document.querySelectorAll(".box")
+
+
+  for(i = 0; i < productItems.length; i++){
+
+    const productItem = productItems[i]
+
+    const productName = productItem.querySelector(".product-name")
+
+    let searchText = productName
+
+    if(searchText.innerHTML.toLowerCase().includes(itemFilter)){
+
+      productItem.style.display = "block"
+    }
+  
+    else{
+      productItem.style.display = "none";
+    }
+
+    
+  }
+
+}
+
 
 //Grab Elements Easily.
 
@@ -259,10 +307,15 @@ function headerSwap() {
   const headerElement = selectElement(".header");
 
   if (this.scrollY >= 700) {
+
     headerElement.classList.add("active");
+
   } else {
+
     headerElement.classList.remove("active");
+
   }
+
 };
 
 window.addEventListener("scroll", headerSwap);
@@ -270,14 +323,23 @@ window.addEventListener("scroll", headerSwap);
 // Back To Top scroll Icon appear and disappear feature.
 
 function backToTop() {
+
   const toTop = selectElement(".to-top");
 
   if (this.scrollY >= 1000) {
+
     toTop.classList.add("activated");
+
   } else {
+
     toTop.classList.remove("activated");
   }
 };
+
+
+
+
+window.addEventListener("scroll", backToTop);
 
 // Target filter button background color highlight.
 
@@ -303,7 +365,6 @@ newArrivalsSection.addEventListener("click", function(e){
 
 });
 
-window.addEventListener("scroll", backToTop);
 
 // New arrivals filter section
 
@@ -359,9 +420,11 @@ const arrivalContainer = document.querySelector(".new-products-description");
 //Display item function
 
 function firstDisplay(menuItems) {
+
   let productContainer = document.getElementById("some-other-product-stuff");
 
   displayMenu = menuItems.map(function (itemContainer) {
+
     return ` <div class="new-products-description">
 
         <img src="${itemContainer.image}" alt="" class="new-product-img">
@@ -391,28 +454,42 @@ function firstDisplay(menuItems) {
 //Menu items first display
 
 window.addEventListener("DOMContentLoaded", function () {
+
   return firstDisplay(newProducts);
 });
 
 //Filter buttons functionality
 const filterBtns = document.querySelectorAll(".btn-1");
 
+
 filterBtns.forEach(function (btn) {
+
   btn.addEventListener("click", function (e) {
+
     clickedBtn = e.currentTarget.dataset.id;
 
     const menuCategory = newProducts.filter(function (eachItem) {
+
       if (eachItem.Arrival === clickedBtn) {
+
         return eachItem;
+
       }
+
     });
 
     if (clickedBtn === "all") {
+
       firstDisplay(newProducts);
+
     } else {
+
       firstDisplay(menuCategory);
+
     }
+
   });
+
 });
 
 // Frequently asked questions functionality.
@@ -420,6 +497,7 @@ filterBtns.forEach(function (btn) {
 const questions = document.querySelectorAll(".question-container-Wrapper");
 
 questions.forEach(function (question) {
+  
   let text = question.querySelector(".question-text-container");
 
   const btn = question.querySelector(".button-container");
@@ -429,6 +507,7 @@ questions.forEach(function (question) {
   const upBtn = question.querySelector(".up-btn");
 
   btn.addEventListener("click", function () {
+    
     text.classList.toggle("show-questions");
 
     downBtn.classList.toggle("show-questions");
@@ -448,20 +527,29 @@ const nextBtn = document.querySelector(".next");
 counter = 0;
 
 slides.forEach(function (slide, index) {
+
   slide.style.left = `${index * 100}%`;
+
 });
 
 function carousel() {
+
   if (counter === slides.length) {
+
     counter = 0;
+
   }
 
   if (counter < 0) {
+
     counter = slides.length - 1;
+
   }
 
   slides.forEach(function (slide) {
+
     slide.style.transform = `translateX(-${counter * 100}%)`;
+    
   });
 }
 // Buttons functionality
@@ -476,3 +564,4 @@ prevBtn.addEventListener("click", function () {
 
   carousel();
 });
+
