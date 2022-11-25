@@ -16,7 +16,7 @@
 
     <!-- Link to CSS -->
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="store.css">
 
     <!-- Box Icon NPM link -->
 
@@ -47,23 +47,29 @@
 
         </div>
 
+        <div class="navbar-menu">
+
+            
         <ul class="navbar">
 
-            <li><a href="#home">HOME</a></li>
+            <li><a href="#home" data-id="home " class="new-menu active">HOME</a></li>
 
-            <li><a href="#about">ABOUT US</a></li>
+            <li><a href="#about" data-id="about"  class="new-menu">ABOUT US</a></li>
 
-            <li><a href="#products">Our PRODUCTS</a></li>
+            <li><a href="#products" data-id="products"  class="new-menu">OUR PRODUCTS</a></li>
 
-            <li><a href="#new-arrivals">NEW-ARRIVALS</a></li>
+            <li><a href="#new-arrivals" data-id= "new-arrivals"  class="new-menu">NEW-ARRIVALS</a></li>
 
-            <li><a href="#ceo">OUR CEO</a></li>
+            <li><a href="#ceo" data-id="ceo"  class="new-menu">OUR CEO</a></li>
 
-            <li><a href="#FAQs">FAQs</a></li>
+            <li><a href="#FAQs" data-id="FAQS"  class="new-menu">FAQs</a></li>
             
-            <li><a href="#customers">TESTIMONIALS</a></li>
+            <li><a href="#customers" data-id="customers"  class="new-menu">TESTIMONIALS</a></li>
 
         </ul>
+
+        </div>
+
 
         <!-- Icons -->
 
@@ -88,7 +94,7 @@
     </header>
 
     <!-- Home Section -->
-    <section class="home" id="home">
+    <section class="home home-1" id="home"> 
 
         <!-- Shopping Cart Container Display -->
 
@@ -168,11 +174,18 @@
 
     </section>
 
-  
+        <!-- Excess background cover -->
 
+        <section class="background">
+
+            <div class="color"></div>
+    
+        </section>
+
+    
     <!-- About Section -->
 
-    <section class="about" id="about">
+    <section class="home-1 about" id="about">
        
         <div class="about-wrapper">
 
@@ -207,36 +220,13 @@
                     </div>
 
                 </div>
-
-               
-                
-            </div>
-
-            <!-- About Text -->
-
-            <div class="about-text">
-
-                <h2>ALL YOU NEED TO KNOW about our brand.</h2>
-                
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam laudantium dolor a non? Quia, quod rerum. Labore similique minus itaque dolores, maxime totam deleniti dolorum! Veritatis suscipit unde quisquam ea.</p>
-
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic corporis quae ea ex itaque aliquid explicabo autem dignissimos aperiam, numquam perferendis sapiente doloremque blanditiis officiis necessitatibus ducimus illo optio molestias?</p>
-
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur aliquam possimus non molestias magnam, quam quae repudiandae eum odit sint recusandae corporis amet explicabo maiores minus voluptatibus modi similique corrupti?</p>
-
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus ipsa rem numquam nulla maiores error fugiat totam facilis commodi perspiciatis! Mollitia maxime placeat qui dolores minima atque corporis exercitationem minus.</p>
-             
-            </div>
-
-        </div>
-
-        <!-- Slide Button -->
+                        <!-- Slide Button -->
 
         <div class="slide-btn">
             
             <button class="prev">
 
-                <span><i class='bx bx-chevron-left'></i></span>
+                    <span><i class='bx bx-chevron-left'></i></span>
 
             </button>
 
@@ -246,13 +236,66 @@
 
             </button>
 
+        </div> 
+            </div>
+
+            <!-- About Text -->
+
+            <div class="about-text">
+
+                <h2 class="about-topic">ALL YOU NEED TO KNOW about our brand.</h2>
+
+                <div class="button-preview">
+
+                    <button class="about-btn active" data-id="History">History</button>
+
+                    <button class="about-btn" data-id="Vision">Vision</button>
+
+                    <button class="about-btn" data-id="Goals">Goals</button>
+
+                </div>
+                
+                <div class="articles">
+
+                    <div class="about-articles active" id="History">
+
+                        <h3 class="about-text">HISTORY</h3>
+
+                        <p>E-commerce originated in a standard for the exchange of business documents, such as orders or invoices, between suppliers and their business customers. Those origins date to the 1948–49 Berlin blockade and airlift with a system of ordering goods primarily via telex, cupiditate accusantium porro totam quidem sed possimus amet ut. Id, iste ab. Explicabo omnis voluptatem perferendis dolorem delectus pariatur ab, laudantium odit. Placeat itaque, tempore et cum quia, tempora expedita libero cumque enim minima, atque fugiat. Ducimus totam iusto officiis, veritatis voluptas pariatur quasi nesciunt quos corporis, libero enim perspiciatis recusandae quis necessitatibus. Quaerat veniam eaque, culpa numquam incidunt cumque sint maiores magnam molestias? Itaque vero dolorum unde dignissimos sed totam quo odio, iusto, voluptates quisquam ipsam vel ex quam culpa eum nam, illo voluptatem a cum veritatis error veniam deserunt nostrum esse. Libero odit, et veritatis provident reiciendis placeat dicta odio necessitatibus cum deserunt ipsum sed minus perspiciatis ab possimus sint aspernatur quos inventore nam aliquid neque sunt. Corrupti sint vitae enim consequuntur autem id modi, praesentium nulla deleniti provident tempora consectetur atque facilis aliquam eos nam.</p>
+
+                    </div>
+
+                    <div class="about-articles" id="Vision">
+
+                        <h3 class="about-text">VISION</h3>
+
+                        <p>Good vision statements have common components: It is written in the present, not future tense. They describe what we will feel, hear, think, say and do as if we had reached our vision now. It is summarised with a powerful phrase. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos iusto nam atque nihil molestias dicta, quod laboriosam consectetur odio. Eum perferendis aliquam velit excepturi numquam? Vitae consequatur inventore voluptas asperiores nisi numquam magni ipsum, iusto labore, culpa quisquam fugit iste nulla minus necessitatibus quos eius animi repellendus eum? Sapiente enim possimus, quos nulla in neque quaerat minus nobis, similique, quasi sit optio repudiandae. Expedita delectus accusantium unde mollitia sit assumenda. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid perferendis, obcaecati ea ipsa odit totam! Veritatis similique porro ipsam voluptas quisquam. Sunt iste eum corrupti cumque error minima voluptatum! Rerum?</p>
+
+                    </div>
+
+                    <div class="about-articles" id="Goals">
+
+                        <h3 class="about-text">GOALS</h3>
+
+                        <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ad dignissimos distinctio, cupiditate accusantium porro totam quidem sed possimus amet ut. Id, iste ab. Explicabo omnis voluptatem perferendis dolorem delectus pariatur ab, laudantium odit. Placeat itaque, tempore et cum quia, tempora expedita libero cumque enim minima, atque fugiat. Ducimus totam iusto officiis, veritatis voluptas pariatur quasi nesciunt quos corporis, libero enim perspiciatis recusandae quis necessitatibus. Quaerat veniam eaque, culpa numquam incidunt cumque sint maiores magnam molestias? Itaque vero dolorum unde dignissimos sed totam quo odio, iusto, voluptates quisquam ipsam vel ex quam culpa eum nam, illo voluptatem a cum veritatis error veniam deserunt nostrum esse. Libero odit, et veritatis provident reiciendis placeat dicta odio necessitatibus cum deserunt ipsum sed minus perspiciatis ab possimus sint aspernatur quos inventore nam aliquid neque sunt. Corrupti sint vitae enim consequuntur autem id modi, praesentium nulla deleniti provident tempora consectetur atque facilis aliquam eos nam.</p>
+                        
+                    </div>
+
+                </div>
+                
+                
+             
+            </div>
+
         </div>
+
+
 
     </section>
 
     <!-- Product Description -->
 
-    <section class="products" id="products">
+    <section class="home-1 products" id="products">
 
         <!-- Product Description Heading -->
 
@@ -437,7 +480,7 @@
 
     <!-- New Arrivals of Products -->
 
-    <section class="new-arrivals" id="new-arrivals">
+    <section class="new-arrivals home-1" id="new-arrivals">
 
         <div class="new-arrival-text">
 
@@ -506,9 +549,11 @@
 
     </section>
 
+    
+
     <!-- CEO Container -->
     
-    <section class="ceo" id="ceo">
+    <section class="ceo home-1" id="ceo">
 
         <!-- Owner Description -->
 
@@ -532,6 +577,10 @@
 
         </div>
 
+      
+
+               
+
         <!-- CEO Image -->
 
         <div class="ceo-img">
@@ -552,7 +601,7 @@
 
     <!-- Frequently Asked Questions Section -->
 
-    <section class="FAQs" id="FAQs">
+    <section class="FAQs home-1" id="FAQs">
 
         <div class="question-container">
 
@@ -715,7 +764,7 @@
 
     <!-- Testimonial Section -->
 
-    <section class="customers" id="customers">
+    <section class="customers home-1" id="customers">
 
         <div id="heading">
 
