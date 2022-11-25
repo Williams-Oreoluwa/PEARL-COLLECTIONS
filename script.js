@@ -1,3 +1,65 @@
+// Target menu highlight
+
+const nav_bar = document.querySelector(".navbar")
+
+const navigation = document.querySelectorAll(".new-menu")
+
+const homeItems = document.querySelectorAll(".home-1")
+
+nav_bar.addEventListener("click", function(e){
+
+  const id = e.target.dataset.id
+
+  if(id){
+
+    navigation.forEach(function(nava){
+
+      e.target.classList.add("active")
+
+      nava.classList.remove("active")
+
+    })
+
+  }
+
+})
+
+//About section
+
+const aboutText = document.querySelector(".about-text")
+
+const aboutBtn = document.querySelectorAll(".about-btn")
+
+const aboutArticles = document.querySelectorAll(".about-articles")
+
+aboutText.addEventListener("click", function(e){
+
+  const id = e.target.dataset.id;
+
+  if(id){
+
+    aboutBtn.forEach(function(btn){
+
+      btn.classList.remove("active")
+
+      e.target.classList.add("active")
+
+    })
+
+    aboutArticles.forEach(function(article){
+
+      article.classList.remove("active")
+
+      const element = document.getElementById(id)
+
+      element.classList.add("active")
+
+    })
+
+  }
+  
+})
+
 //Cart container display
 
 const shoppingCartIcon = document.querySelector(".shopping-cart");
@@ -10,7 +72,7 @@ shoppingCartIcon.addEventListener("click", function () {
 
 });
 
-//Cart container removal
+//Cart container removel
 
 const cancelBtn = document.querySelector(".cancel-button");
 
@@ -160,6 +222,7 @@ function quantityChanged(e) {
 //Function for add to cart
 
 function addToCartClicked(e) {
+
   const button = e.target;
 
   const shopItem = button.parentElement.parentElement;
@@ -178,6 +241,7 @@ function addToCartClicked(e) {
 //Add Item to cart function.
 
 function addItemToCart(title, productPrice, productImage) {
+
   const cartCreate = document.createElement("div");
 
   const cartItems = document.querySelector(".all-out-cart-display");
@@ -187,9 +251,11 @@ function addItemToCart(title, productPrice, productImage) {
   const cartItemNames = cartItems.querySelectorAll(".cart-item-title");
 
   for (i = 0; i < cartItemNames.length; i++) {
+
     const cartItemName = cartItemNames[i];
 
     if (cartItemName.innerHTML === title) {
+
       alert("Item already added to cart");
 
       return;
@@ -241,6 +307,7 @@ function addItemToCart(title, productPrice, productImage) {
 
 
 //Menu Icon toggle for smaller screen sizes.
+
 let navbar = document.querySelector(".navbar");
 
 const menuIcon = document.querySelector("#menu-icon");
@@ -276,10 +343,13 @@ function searchFilter(){
     if(searchText.innerHTML.toLowerCase().includes(itemFilter)){
 
       productItem.style.display = "block"
+
     }
+
   
     else{
       productItem.style.display = "none";
+
     }
 
     
@@ -507,12 +577,14 @@ questions.forEach(function (question) {
   const upBtn = question.querySelector(".up-btn");
 
   btn.addEventListener("click", function () {
-    
+
+
     text.classList.toggle("show-questions");
 
     downBtn.classList.toggle("show-questions");
 
     upBtn.classList.toggle("show-questions");
+    
   });
 });
 
@@ -564,4 +636,5 @@ prevBtn.addEventListener("click", function () {
 
   carousel();
 });
+
 
